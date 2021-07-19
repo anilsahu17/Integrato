@@ -1,0 +1,97 @@
+.graph-title{
+    font-size: 19px;
+    color: #444;
+  }
+  .graph-filter-btn button{
+   background: #fff;
+  }
+  .graph-filter-btn button:first-child{
+    *margin-right: 1px !important;
+  }
+
+  .project-table{
+      width:100%;
+      margin-top: 20px;
+  }
+  .project-table th{
+     font-weight: 500;
+     color: #444;
+  }
+  .widget-projects-list{
+      margin:0;
+      padding:0;
+      list-style:none;
+      padding-top: 20px;
+  }
+
+  .widget-projects-list .counter{
+     width: 55px;
+     height: 55px;
+     padding: 15px 0;
+     text-align: center;
+     border-radius: 5px;
+     font-size: 22px;
+     line-height: 1.2;
+     float: left;
+  }
+  .widget-projects-list .details{
+     float: left;
+     width: calc(100% - 60px);
+     padding-left: 10px;
+     margin-left: 5px;
+     padding-top: 5px;
+  }
+  .widget-projects-list .details p{
+      margin-bottom:2px;
+      color: #444;
+  }
+  .widget-projects-list .details small{
+      display:block;
+  }
+  .widget-projects-list .wp-item{
+     width: 100%;
+     display: inline-block;
+     margin-bottom: 8px;
+  }
+  .p-icon{
+     width: 50px;
+     height: 50px;
+     object-fit: cover;
+     margin-top: 5px;
+     margin-bottom: 5px;
+  }
+  .prog-prst{
+     height: 8px;
+     margin-top: 8px;
+  }
+  .project-table thead th {font-family: "Heebo medium";} 
+
+  .project-table tbody td{
+     border-top: 1px solid #ccc;
+     
+  }
+  .project-table thead th, .project-table tbody td{
+      padding:10px;
+  }
+
+  .bg-success2{
+     background:#00c9a7;
+ }
+
+ .btn-shadow{
+     box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.10);
+     padding: 6px 15px !important;
+     border-radius: 3px  !important;
+ }
+ .btn-light:hover {
+     color: #212529;
+     background-color: #f7f7f7;
+     border-color: #f4f4f4;
+ }
+
+ .box-style2{
+    background:#fff;
+    border-radius:4px;
+    margin: 15px 0px;
+    padding: 5px 0;
+  }

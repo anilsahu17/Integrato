@@ -1,0 +1,142 @@
+
+                
+
+                <div class="row">
+                        <div class="col-12">
+                            <ul class="breadcrumb">
+                                <li><i class="fa fa-home"></i></li>
+                                <li>Dashboard</li>
+                                <li><i class="fa fa-angle-right"></i></li>
+                                <li>API List</li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-12">
+                                <div class="row  table-head-c ml-0 mr-0">
+                                  <div class="col">
+                                      <h2 class="page-title">API List</h2>
+                                  </div>
+                                  <!-- <div class="col-auto">
+                                      <button class="btn addNew theme-btn btn-sm button-c-round  mb-4" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#myModal"> <i class="fa fa-plus"></i> Add New</button>
+                                  </div> -->
+                                </div>
+                                <div class=" table-wrapper">
+                                  <table mat-table [dataSource]="dataSource" matSort matColumnDef="index">
+    
+                                        <!-- Position Column -->
+                                        <ng-container matColumnDef="position">
+                                          <th mat-header-cell *matHeaderCellDef > No. </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                        </ng-container>
+    
+                                      
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="name">
+                                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                                        </ng-container>
+                                      
+                                        <!-- Weight Column -->
+                                        <ng-container matColumnDef="domain">
+                                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Doc URL </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.domain}} </td>
+                                        </ng-container>
+                                      
+                                          <!-- Symbol Column -->
+                                        <ng-container matColumnDef="logo">
+                                          <th mat-header-cell *matHeaderCellDef > Auth type </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.logo}} </td>
+                                        </ng-container>
+    
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="action" >
+                                                <th mat-header-cell *matHeaderCellDef class="w-150 text-center" > Action </th>
+                                                <td mat-cell *matCellDef="let element; let i = index;" >
+                                                        <button type="button" class="btn btn-light btn-circle btn-sm hidden">   
+                                                          <i class="fa fa-eye" style="font-size: 24px;"></i>
+                                                        </button>
+                                                        <button type="button" class="btn btn-light btn-circle btn-sm " data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#myModal">   
+                                                          <i class="material-icons"  (click)="editApi(i)"  > edit</i>
+                                                        </button>
+                                                        <button type="button" class="btn btn-light btn-circle btn-sm">   
+                                                            <i class="material-icons"> delete</i>
+                                                        </button>
+                                                </td>
+                                        </ng-container>
+                                      
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                      </table>
+                                      <mat-paginator [pageSizeOptions]="[ 10, 20]" showFirstLastButtons></mat-paginator>
+                                </div>
+                        </div>
+                        
+                    </div>
+    
+    
+    
+    
+                    <!-- The Modal -->
+    <div class="modal animatetop" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+      <form (ngSubmit)="addNewCompnay()" [formGroup]="addCompnay" >  
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Edit Api    </h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+
+             
+                      <div class="form-group ">
+                          <label for="pwd" class="d-block">Name:  </label>
+                          <input type="text" formControlName="name" [(ngModel)]="c_name"   class="form-control " name="c_name"  placeholder="Name"  required [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                          <!-- <i class="input-icon fa fa-lock"></i> -->
+                          <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required">Username is required</div>
+                          </div>
+                      </div>
+                      <div class="form-group ">
+                          <label for="pwd" class="d-block">Doc URL:  </label>
+                          <input type="text" formControlName="url" [(ngModel)]="c_url"   class="form-control " name="c_url" placeholder="Doc URL"  required [ngClass]="{ 'is-invalid': submitted && f.url.errors }" >
+                          <!-- <i class="input-icon fa fa-lock"></i> -->
+                          <div *ngIf="submitted && f.url.errors" class="invalid-feedback">
+                            <div *ngIf="f.url.errors.required">Username is required</div>
+                          </div>
+                      </div>
+                     
+                      <div class="form-group">
+                          <label for="pwd" class="d-block">Auth Type:  </label>
+                          <input type="text" formControlName="auth" [(ngModel)]="c_auth"   class="form-control " name="c_auth" id="pwd" placeholder="Auth Type"  required [ngClass]="{ 'is-invalid': submitted && f.auth.errors }">
+                          <!-- <i class="input-icon fa fa-lock"></i> -->
+                          <div *ngIf="submitted && f.auth.errors" class="invalid-feedback">
+                            <div *ngIf="f.auth.errors.required">Username is required</div>
+                          </div>
+                      </div>
+
+                     
+    
+            </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn theme-btn-light" data-dismiss="modal">Save</button>
+              <button type="button" class="btn theme-btn-red" data-dismiss="modal">Close</button>
+            </div>
+
+
+      </form>
+
+          </div>
+        </div>
+      </div>
+        
+        
+                   

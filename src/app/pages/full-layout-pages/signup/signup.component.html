@@ -1,0 +1,114 @@
+
+<!--===== Header ====-->
+<header id="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 pt-3 pb-3">
+                <img class="logo img-responsive" src="assets/images/logo.png">
+            </div>
+        </div>
+    </div>
+  </header>
+
+
+  <main class="main-section" id="main">
+    <div class="container">
+        <div class="row align-middle align-items-center">
+            
+           
+
+            <div class="col-lg-7 col-md-7 col-sm-12 pt-2 mobile-hide">
+                <img class=" sign-img " src="assets/images/sign-up-2.png" >
+            </div>
+
+             <div class="col-lg-5 col-md-5 col-sm-12 sign-form ">
+               <div class="form-wrapper animate slideRight anidelay4 run box-1">
+                <h3 class="title"><strong>Sign Up</strong></h3>
+
+                <form #myform="ngForm" (ngSubmit)="signup(myform)" [formGroup]="signUp" >
+
+                  <div class="form-group mt-3">
+                    <label for="text">Company Name:</label>
+                    <input type="text" formControlName="c_name" class="form-control pl-36"  placeholder="Company Name" required [ngClass]="{ 'is-invalid': submitted && f.c_name.errors }">
+                    <i class="input-icon fa fa-briefcase"></i>
+                    <div *ngIf="submitted && f.c_name.errors" class="invalid-feedback">
+                        <div *ngIf="f.c_name.errors.required">Company Name is required</div>
+                      </div>
+                  </div>
+                  <div class="form-group mt-2">
+                    <label for="text">Full Name:</label>
+                    <input type="text" formControlName="fullname" class="form-control pl-36"  placeholder="Full Name" required [ngClass]="{ 'is-invalid': submitted && f.fullname.errors }">
+                    <i class="input-icon fa fa-user"></i>
+                    <div *ngIf="submitted && f.fullname.errors" class="invalid-feedback">
+                        <div *ngIf="f.fullname.errors.required">Full Name is required</div>
+                      </div>
+                  </div>
+                  <div class="form-group mt-2">
+                    <label for="email" >Email:  </label>
+                    <input type="email" formControlName="email" class="form-control pl-36"  placeholder="Email" required email [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                    <i class="input-icon fa fa-at"></i>
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                      </div>
+                  </div>
+                  <div class="form-group mt-2">
+                    <label for="pwd">Password:</label>
+                    <input type="password"  formControlName="password"  class="form-control pl-36" required placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                    <i class="input-icon fa fa-lock"></i>
+                     <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                      </div>
+                  </div>
+                  <div class="form-group mt-2 ">
+                    <label for="pwd" >Confirm Password: </label>
+                    <input type="password" formControlName="c_password"  class="form-control pl-36" required  placeholder="Confirm Password"  [ngClass]="{ 'is-invalid': submitted && f.c_password.errors }">
+                    <i class="input-icon fa fa-lock"></i>
+
+                      <div *ngIf="submitted && f.c_password.errors" class="invalid-feedback">
+                        <div *ngIf="f.c_password.errors.required">Password is required</div> 
+                        <div *ngIf="f.c_password.errors.mustMatch">Passwords must match</div>
+                      </div>
+
+                  </div>
+                  <div class="form-group mt-2 ">
+                    <div class="row align-items-center ">
+                        <div class="col">
+                            <span> Already a member?  </span><a [routerLink]="['/signin']">Sign In </a>
+
+                            <!-- <label class="form-check-label">
+                              <input class="form-check-input check-box" type="checkbox" checked>
+                              <span class="checkbox1"></span>
+                               I have read the  <a href="#">Agreement </a>
+                               
+                            </label> -->
+                        </div>
+                        <div class="col-auto">
+                          <button type="submit" class="btn btn-primary theme-btn ">Sign Up</button>
+                        </div>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+
+            </div>
+
+        </div>
+    </div>
+  </main>
+
+<!--===== Footer ====-->
+  <footer id="footer">
+    <div class="container">
+        <div class="row footer-text">
+            <div class="col-md-6 col-sm-12">
+                <p>Copyright © 2019 Integrato. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 col-sm-12 term-condition">
+                <p><a>Terms & Condition</a> | <a>Privacy Policy</a></p>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+

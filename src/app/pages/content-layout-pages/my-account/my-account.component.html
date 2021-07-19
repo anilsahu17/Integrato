@@ -1,0 +1,176 @@
+<div class="row">
+    <div class="col-12">
+        <ul class="breadcrumb">
+            <li><i class="fa fa-home"></i></li>
+            <li> <a  [routerLink]="['/dashboard']">Dashboard </a></li>
+            <li><i class="fa fa-angle-right"></i></li>
+            <li>Account Setting</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+            <div class="box-style2 p-4 animate slideBottom run" >
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="page-title">Account settings</h2>
+                    </div>
+                    <div class="col-12">
+
+                                <mat-tab-group disableRipple>
+
+                                    <mat-tab>
+                                      <ng-template mat-tab-label>
+                                       <div class="tab-label-content"> General </div>
+                                      </ng-template>
+                                      
+                                        <div class="tab-details mt-4">
+
+                                                    <form #myform="ngForm" (ngSubmit)="genUpdate(myform)" [formGroup]="generalSetting">
+                                                        
+                                                        <input type="hidden" [(ngModel)]="uId" formControlName="u_id">
+
+                                                        <div class="col-12">
+                                                            <div class="form-group row">
+                                                                <label for="staticEmail" class="col-sm-12 col-md-2  col-lg-2   col-form-label"><b>Company Name :</b> </label>
+                                                                <div class="col-sm-12 col-md-10 col-lg-10">
+                                                                    <input formControlName="c_name" type="text" class="form-control"  placeholder="Company Name" [ngClass]="{ 'is-invalid': submitted && f.c_name.errors }">
+                                                                    <div *ngIf="submitted && f.c_name.errors" class="invalid-feedback">
+                                                                        <div *ngIf="f.c_name.errors.required">Username is required</div>
+                                                                </div>
+                                                                
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                           <div class="form-group row">
+                                                                <label for="inputPassword" class="col-sm-12 col-md-2  col-lg-2 col-form-label"><b>Full Name :</b></label>
+                                                                <div class="col-sm-12 col-md-10 col-lg-10">
+                                                                    <input  formControlName="fullname" type="text" class="form-control" placeholder="Full Name" [ngClass]="{ 'is-invalid': submitted && f.fullname.errors }">
+                                                                    <div *ngIf="submitted && f.fullname.errors" class="invalid-feedback">
+                                                                        <div *ngIf="f.fullname.errors.required">Username is required</div>
+                                                                </div>
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <div class="form-group row">
+                                                                 <label for="inputPassword" class="col-sm-12 col-md-2  col-lg-2 col-form-label"><b>Custom Domain :</b></label>
+                                                                 <div class="col-sm-12 col-md-10 col-lg-10">
+                                                                     <input formControlName="domain" type="text" class="form-control" placeholder="Custom Domain" [ngClass]="{ 'is-invalid': submitted && f.domain.errors }">
+                                                                     <div *ngIf="submitted && f.domain.errors" class="invalid-feedback">
+                                                                        <div *ngIf="f.domain.errors.required">Username is required</div>
+                                                                     </div>
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                                <div class="form-group row">
+                                                                     <label for="inputPassword" class="col-sm-12 col-md-2  col-lg-2 col-form-label"><b>Company Logo :</b></label>
+                                                                     <div class="col-sm-12 col-md-10 col-lg-10">
+                                                                         <input formControlName="logo" type="file" class="form-control" style="padding-top: 5px;" accept=".jpg, .png, .JPEJ, .PNG, .gif" placeholder="Custom Logo" [ngClass]="{ 'is-invalid': submitted && f.logo.errors }">
+                                                                         <div *ngIf="submitted && f.logo.errors" class="invalid-feedback">
+                                                                            <div *ngIf="f.logo.errors.required">Username is required</div>
+                                                                         </div>
+                                                                    </div>
+                                                                </div> 
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                                <div class="form-group row">
+                                                                     
+                                                                    <label for="button" class="col-sm-12 col-md-2  col-lg-2 col-form-label"></label>
+                                                                     <div class="col-auto">
+                                                                         <button type="submit" class="btn btn-primary theme-btn  px-5" >Update </button>
+                                                                     </div>
+                                                                </div> 
+                                                        </div>
+                                                        
+                                                    </form>
+
+
+                                        </div>
+
+                                    </mat-tab>
+
+                                    <mat-tab>
+                                      <ng-template mat-tab-label>
+                                            <div class="tab-label-content"> Password </div>
+                                      </ng-template>
+
+                                      <div class="tab-details mt-4">
+                                         
+                                            <form  #myform2="ngForm" (ngSubmit)="passUpdate(myform2)" [formGroup]="passwordSetting" >
+                                                      
+                                                    <input type="hidden" [(ngModel)]="uId" formControlName="u_id">
+
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <label for="oPassword" class="col-sm-12 col-md-2  col-lg-2   col-form-label"><b>Old Password :</b> </label>
+                                                            <div class="col-sm-12 col-md-10 col-lg-10">
+                                                                <input formControlName="o_password" type="password" class="form-control"  placeholder="Old Password" [ngClass]="{ 'is-invalid': submittedF2 && f2.o_password.errors }">
+                                                                
+                                                                <div *ngIf="submittedF2 && f2.o_password.errors" class="invalid-feedback">
+                                                                        <div *ngIf="f2.o_password.errors.required">Username is required</div>
+                                                                </div>
+                                                            
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                       <div class="form-group row">
+                                                            <label for="Password" class="col-sm-12 col-md-2  col-lg-2 col-form-label"><b>New Password :</b></label>
+                                                            <div class="col-sm-12 col-md-10 col-lg-10">
+                                                                <input formControlName="password" type="password" class="form-control" placeholder="New Password " [ngClass]="{ 'is-invalid': submittedF2 && f2.password.errors }">
+                                                                <div *ngIf="submittedF2 && f2.password.errors" class="invalid-feedback">
+                                                                        <div *ngIf="f2.password.errors.required">Username is required</div>
+                                                                      </div>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                             <label for="cPassword" class="col-sm-12 col-md-2  col-lg-2 col-form-label"><b>Confirm Password :</b></label>
+                                                             <div class="col-sm-12 col-md-10 col-lg-10">
+                                                                 <input  formControlName="c_password" type="password" class="form-control" placeholder="Confirm Password" [ngClass]="{ 'is-invalid': submittedF2 && f2.c_password.errors }">
+                                                                 <div *ngIf="submittedF2 && f2.c_password.errors" class="invalid-feedback">
+                                                                        <div *ngIf="f2.c_password.errors.required">Password is required</div> 
+                                                                        <div *ngIf="f2.c_password.errors.mustMatch">Passwords must match</div>
+                                                                 </div>
+                                                             
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+
+                                                  
+                                                    <div class="col-12">
+                                                            <div class="form-group row">
+                                                                 
+                                                                <label for="button" class="col-sm-12 col-md-2  col-lg-2 col-form-label"></label>
+                                                                 <div class="col-auto">
+                                                                     <button type="submit" class="btn btn-primary theme-btn  px-5" >Update </button>
+                                                                 </div>
+                                                            </div> 
+                                                    </div>
+                                                    
+                                                </form> 
+
+
+
+                                      </div>
+
+                                    </mat-tab>
+                                </mat-tab-group>
+
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

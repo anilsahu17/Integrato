@@ -1,0 +1,129 @@
+
+.pg-title{
+    font-family: Heebo medium;
+    color: #000;
+}
+
+.c-dark{
+    color: #000;
+}
+
+.graph-filter-btn button {
+    border-color: #dcdcdc;
+}
+
+.graph-filter-btn button{
+    border-color: #dcdcdc;
+    padding: 6px 15px !important;
+    background:#fff !important;
+}
+
+.graph-filter-btn button.active{
+    border-color: #0797cd !important;
+    background: #fff !important;
+    color:#0797cd !important;
+    box-shadow: 0 0 2px #94dafb;
+}
+
+.graph-filter-btn button:first-child {
+    margin-right: 1px !important;
+}
+
+.graph-filter-btn button.active {
+    border-color: #1890ff !important;
+    background: #fff !important;
+}     
+
+.pricing-item{
+    padding: 20px 40px;
+    min-height: 360px;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 1px 6px 5px rgba(0, 0, 0, 0.08);
+    max-width: 330px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.price{
+    font-family: "Heebo exbold";
+    font-size: 50px;
+    color:#000;
+}
+.price small{ 
+    font-size: 20px;
+    vertical-align: text-top;
+    line-height: 3;
+    color:#fff;
+    padding-right: 4px;
+}
+.details .validity{
+    margin: 0;
+    color: #000;
+}
+
+.details .name{
+    font-size: 24px;
+    font-family: Heebo medium;
+    text-transform: uppercase;
+    color:#2575fc;
+}
+
+.buy-btn{
+   background: #2575fc;
+   padding-left:15px;
+   padding-right:15px;
+   border-radius:0;
+   margin-bottom:20px;
+}
+
+.p-list{
+    padding: 15px 10px;
+    text-align: center;
+    list-style: none;
+    width: 100%;
+}
+.p-list li{
+   width:100%;
+   margin-bottom:8px;
+   color: #636363;
+}
+        
+.p-overlay h2{
+    font-size: 47px;
+    position: absolute;
+    left: 94%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+    font-weight: 900;
+    color: rgba(0,0,0,0.09);
+    line-height: 1;
+    font-family: "Heebo exbold";
+    letter-spacing: 3px;
+}
+
+.pricing-item:before{
+    background: #c9e7fe;
+    content: "";
+    height: 300px;
+    left: -25%;
+    position: absolute;
+    top: -24%;
+    transform: rotate(20deg);
+    width: 150%;
+}
+.p-wrapper{
+    position:relative;
+    z-index:10;
+}
+
+.active.pricing-item:before{
+    transform: rotate(-18deg);
+}
+
+@media(max-width:767px){
+    .project-table thead th, .project-table tbody td {
+        padding: 8px;
+    }
+}

@@ -1,0 +1,107 @@
+.sign-img{
+    max-width: 480px;
+    width: 100%;
+ }
+
+ 
+ .sign-form .title , .sign-form label{
+    color:black;
+ }
+
+ .sign-form label{
+  font-size: 15px;
+ }
+
+ .sign-form .form-check-label{
+  font-size: 14px;
+ }
+
+ .sign-form{
+    padding-top: 50px;
+    padding-bottom: 50px;
+ }
+ .right-btn{
+    float: right;
+ }
+ .forgot-link{
+    float: right;
+    color:#858585;
+    font-size: 14px;
+}
+
+
+body{
+  overflow-x: hidden;
+}
+
+.input-icon{
+  font-size: 20px;
+  position: absolute;
+  top: 41px;
+  left: 10px;
+  color: #c3c3c3;
+}
+
+ .pl-36{
+      padding-left: 36px;
+ }
+
+
+.align-middle{
+  height: calc(100vh - 190px);
+}
+
+
+@media(min-width: 900px) {
+    #footer{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+     }
+
+    .main-section{
+        padding-bottom: 50px;
+    }
+
+    .term-condition{
+        text-align: right;
+    }
+
+    .footer-text p{
+       margin-top: 1rem
+     }
+
+}
+@media( max-width: 900px) {
+
+     .logo{
+            margin:0 auto;
+            display: block;
+     }
+
+     .footer-text{
+        text-align: center;
+     }
+
+}
+
+@media(max-width: 767px){
+    .sign-form{
+        padding-top: 15px;
+        padding-bottom: 15px;
+     }
+     .main-section{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .align-middle {
+        height: calc(100vh - 260px);
+        min-height: 430px;
+    }
+    .sign-form .form-check-label {
+      font-size: 12px;
+  }
+  .logo{
+    max-width: 280px;
+  }
+}

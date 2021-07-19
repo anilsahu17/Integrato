@@ -1,0 +1,278 @@
+
+                
+
+                <div class="row">
+                        <div class="col-12">
+                            <ul class="breadcrumb">
+                                <li><i class="fa fa-home"></i></li>
+                                <li>Dashboard</li>
+                                <li><i class="fa fa-angle-right"></i></li>
+                                <li>Applications</li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-12">
+                                <div class="row  table-head-c ml-0 mr-0">
+                                  <div class="col">
+                                      <h2 class="page-title">Application list</h2>
+                                  </div>
+                                  <div class="col-auto">
+                                      
+                                        
+                                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+
+                                            <div class="btn-group" role="group">
+                                              <button id="btnGroupDrop1" type="button" class="btn  theme-btn-outline btn-sm button-c-round  mb-4 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                  <i class="fa fa-plus"></i> Add New
+                                              </button>
+                                              <div class="dropdown-menu addnewdrop" aria-labelledby="btnGroupDrop1">
+                                                <a class="dropdown-item" href="javascript:;">Internal</a>
+                                                <a class="dropdown-item" href="javascript:;">External</a>
+                                              </div>
+                                            </div>
+
+                                            <button class="btn addNew theme-btn-outline btn-sm button-c-round  mb-4" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#myModal"> <i class="fa fa-upload"></i> Export</button>
+                                      
+                                            
+                                          </div>
+                                      
+                                  </div>
+                                </div>
+                                <div class=" table-wrapper">
+                                  <table mat-table [dataSource]="dataSource" matSort >
+    
+                                        <!-- Position Column -->
+                                        <ng-container matColumnDef="position">
+                                          <th mat-header-cell *matHeaderCellDef > No. </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                        </ng-container>
+    
+                                      
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="name">
+                                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                                        </ng-container>
+                                      
+                                        <!-- Weight Column -->
+                                        <ng-container matColumnDef="domain">
+                                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.domain}} </td>
+                                        </ng-container>
+                                      
+                                          <!-- Symbol Column -->
+                                        <ng-container matColumnDef="key">
+                                          <th mat-header-cell *matHeaderCellDef > Key </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.key}} </td>
+                                        </ng-container>
+
+                                         <!-- Symbol Column -->
+                                         <ng-container matColumnDef="secret">
+                                            <th mat-header-cell *matHeaderCellDef > Secret </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.secret}} </td>
+                                        </ng-container>
+          
+    
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="action">
+                                                <th mat-header-cell *matHeaderCellDef class="w-150 text-center" > Action </th>
+                                                <td mat-cell *matCellDef="let element">
+                                                        <button type="button" class="btn btn-light btn-circle btn-sm">   
+                                                          <i class="fa fa-eye" style="font-size: 24px;"></i>
+                                                        </button>
+                                                        <button type="button" class="btn btn-light btn-circle btn-sm " data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#EditApplication">   
+                                                          <i class="material-icons" > edit</i>
+                                                        </button>
+                                                        <button type="button" class="btn btn-light btn-circle btn-sm">   
+                                                            <i class="material-icons"> delete</i>
+                                                        </button>
+                                                </td>
+                                        </ng-container>
+                                      
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                      </table>
+                                      <mat-paginator [pageSizeOptions]="[ 10, 20]" showFirstLastButtons></mat-paginator>
+                                </div>
+                        </div>
+                    </div>
+    
+    
+    
+    
+   <!-- New Application The Modal -->
+    <div class="modal animatetop" id="NewApplication">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+
+         <form id="addApplication" (ngSubmit)="addNewApp()" [formGroup]="addApplication">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Add Application    </h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+           
+                <div class="row">
+                    <div class="form-group  col-lg-6 col-md-6 col-sm-12">
+                        <label for="pwd" class="d-block">Company Name:  </label>
+                        <input type="text" formControlName="c_name" class="form-control " name="c_name"  placeholder="Name"  required [ngClass]="{ 'is-invalid': submitted && fe.password.errors }">
+                        <!-- <i class="input-icon fa fa-lock"></i> -->
+                        <!-- <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                          <div *ngIf="f.password.errors.required">Username is required</div>
+                        </div> -->
+                    </div>
+                    <div class="form-group  col-lg-6 col-md-6 col-sm-12">
+                        <label for="pwd" class="d-block">Admin Name:  </label>
+                        <input type="text" formControlName="ad_name" class="form-control " name="ad_name" placeholder="Admin Name"  required [ngClass]="{ 'is-invalid': submitted && fe.password.errors }">
+                        <!-- <i class="input-icon fa fa-lock"></i> -->
+                        <!-- <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                          <div *ngIf="f.password.errors.required">Username is required</div>
+                        </div> -->
+                    </div>
+                    <div class="form-group  col-lg-6 col-md-6 col-sm-12">
+                      <label for="pwd" class="d-block">Application Name:  </label>
+                      <input type="text" formControlName="ap_name" class="form-control " name="app_name" placeholder="Application Name"  required [ngClass]="{ 'is-invalid': submitted && fe.ap_name.errors }">
+                      <!-- <i class="input-icon fa fa-lock"></i> -->
+                      <!-- <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Username is required</div>
+                      </div> -->
+                    </div>
+                    <div class="form-group  col-lg-6 col-md-6 col-sm-12">
+                        <label for="pwd" class="d-block">Logo:  </label>
+                        <input type="file" formControlName="logo" class="form-control "  style="padding-top: 5px;" name="Logo" placeholder="Logo"  required [ngClass]="{ 'is-invalid': submitted && fe.logo.errors }">
+                        <!-- <i class="input-icon fa fa-lock"></i> -->
+                        <!-- <div *ngIf="submitted && f.logo.errors" class="invalid-feedback">
+                          <div *ngIf="f.logo.errors.required">Username is required</div>
+                        </div> -->
+                    </div>
+                    <div class="form-group  col-lg-6 col-md-6 col-sm-12">
+                        <label for="pwd" class="d-block">Descriptions:  </label>
+                        <input type="text" formControlName="desc" class="form-control " name="desc"  placeholder="Descriptions"  required [ngClass]="{ 'is-invalid': submitted && fe.desc.errors }">
+                        <!-- <i class="input-icon fa fa-lock"></i> -->
+                        <!-- <div *ngIf="submitted && f.desc.errors" class="invalid-feedback">
+                          <div *ngIf="f.desc.errors.required">Username is required</div>
+                        </div> -->
+                    </div>
+                    <div class="form-group  col-lg-6 col-md-6 col-sm-12">
+                        <label for="pwd" class="d-block">API's:  </label>
+                        <input type="text" formControlName="apis" class="form-control " name="apis"  placeholder="apis"  required [ngClass]="{ 'is-invalid': submitted && fe.apis.errors }">
+                        <!-- <i class="input-icon fa fa-lock"></i> -->
+                        <!-- <div *ngIf="submitted && f.apis.errors" class="invalid-feedback">
+                          <div *ngIf="f.apis.errors.required">Username is required</div>
+                        </div> -->
+                    </div>
+                    
+                </div>
+             
+
+          </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="submit" class="btn theme-btn-light"  >Save</button>
+              <button type="button" class="btn theme-btn-red" data-dismiss="modal">Close</button>
+            </div>
+
+       </form>
+
+
+          </div>
+        </div>
+      </div>
+        
+
+
+
+      
+   <!-- Edit Application The Modal -->
+    <div class="modal animatetop" id="EditApplication">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+
+        <form id="editApplication" (ngSubmit)="editApp()" [formGroup]="editApplication">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Edit Application    </h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+    
+          <!-- Modal body -->
+          <div class="modal-body">
+           
+              <div class="row">
+                  <div class="form-group  col-lg-6 col-md-6 col-sm-12">
+                      <label for="pwd" class="d-block">Company Name:  </label>
+                      <input type="text" formControlName="c_name" class="form-control " name="c_name"  placeholder="Name"  required [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                      <!-- <i class="input-icon fa fa-lock"></i> -->
+                      <!-- <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Username is required</div>
+                      </div> -->
+                  </div>
+                  <div class="form-group  col-lg-6 col-md-6 col-sm-12">
+                      <label for="pwd" class="d-block">Admin Name:  </label>
+                      <input type="text" formControlName="ad_name" class="form-control " name="ad_name" placeholder="Admin Name"  required [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                      <!-- <i class="input-icon fa fa-lock"></i> -->
+                      <!-- <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Username is required</div>
+                      </div> -->
+                  </div>
+                  <div class="form-group  col-lg-6 col-md-6 col-sm-12">
+                    <label for="pwd" class="d-block">Application Name:  </label>
+                    <input type="text" formControlName="ap_name" class="form-control " name="app_name" placeholder="Application Name"  required [ngClass]="{ 'is-invalid': submitted && f.ap_name.errors }">
+                    <!-- <i class="input-icon fa fa-lock"></i> -->
+                    <!-- <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                      <div *ngIf="f.password.errors.required">Username is required</div>
+                    </div> -->
+                  </div>
+                  <div class="form-group  col-lg-6 col-md-6 col-sm-12">
+                      <label for="pwd" class="d-block">Logo:  </label>
+                      <input type="file" formControlName="logo" class="form-control "  style="padding-top: 5px;" name="Logo" placeholder="Logo"  required [ngClass]="{ 'is-invalid': submitted && f.logo.errors }">
+                      <!-- <i class="input-icon fa fa-lock"></i> -->
+                      <!-- <div *ngIf="submitted && f.logo.errors" class="invalid-feedback">
+                        <div *ngIf="f.logo.errors.required">Username is required</div>
+                      </div> -->
+                  </div>
+                  <div class="form-group  col-lg-6 col-md-6 col-sm-12">
+                      <label for="pwd" class="d-block">Descriptions:  </label>
+                      <input type="text" formControlName="desc" class="form-control " name="desc"  placeholder="Descriptions"  required [ngClass]="{ 'is-invalid': submitted && f.desc.errors }">
+                      <!-- <i class="input-icon fa fa-lock"></i> -->
+                      <!-- <div *ngIf="submitted && f.desc.errors" class="invalid-feedback">
+                        <div *ngIf="f.desc.errors.required">Username is required</div>
+                      </div> -->
+                  </div>
+                  <div class="form-group  col-lg-6 col-md-6 col-sm-12">
+                      <label for="pwd" class="d-block">API's:  </label>
+                      <input type="text" formControlName="apis" class="form-control " name="apis"  placeholder="apis"  required [ngClass]="{ 'is-invalid': submitted && f.apis.errors }">
+                      <!-- <i class="input-icon fa fa-lock"></i> -->
+                      <!-- <div *ngIf="submitted && f.apis.errors" class="invalid-feedback">
+                        <div *ngIf="f.apis.errors.required">Username is required</div>
+                      </div> -->
+                  </div>
+                  
+              </div>
+
+
+            
+
+        </div>
+    
+          <!-- Modal footer -->
+          <div class="modal-footer">
+              <button type="submit" class="btn theme-btn-light" >Save</button>
+              <button type="button" class="btn theme-btn-red" data-dismiss="modal">Close</button>
+          </div>
+
+           </form>
+
+        </div>
+      </div>
+    </div>
+      
+        
+                   

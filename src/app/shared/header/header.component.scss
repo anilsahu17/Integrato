@@ -1,0 +1,19 @@
+.top-search-form{
+    position: absolute;
+    width: 200px;
+    top: 5px;
+    left: 4px;
+  }
+  .top-search-form input{
+    background: transparent;
+    border-radius: 30px; 
+    padding: .45rem .75rem;
+    padding-left: 35px;
+  }
+  .top-search-form .form-control:focus {
+      background-color: transparent;
+      box-shadow: none;
+  }
+  .top-search-form{
+    display: none;
+  }

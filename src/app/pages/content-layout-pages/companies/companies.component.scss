@@ -1,0 +1,125 @@
+
+.mat-table-shadow {
+  box-shadow: 0 11px 14px 2px rgba(0, 0, 0, 0.04);;
+}
+
+$tab-color : #0266ff;
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow , .mat-primary .mat-option.mat-selected:not(.mat-option-disabled){
+  color: $tab-color;
+}
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: $tab-color;
+}
+.mat-header-cell {
+  color: rgba(0, 0, 0, 0.66);
+  font-size: 15px;
+  font-weight: 600;
+}
+.hidden{
+  display: none;
+}
+
+.table-head-c{
+  padding-top: 25px;
+  background: #fff;
+  border: 1px solid rgba(218, 218, 218, 0.2);
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+.theme-btn-red{
+      color: #fff;
+      background-color: #f9959e;
+      border-color: #f7a7af;
+}
+.theme-btn-red:hover{
+
+  color: #fff;
+  background-color: #d63b48;
+  border-color: #d63b48;
+
+}
+
+table {
+    width: 100%;
+  }
+  
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+
+  .btn-circle.btn-sm { 
+    width: 40px;
+    height: 40px;
+    padding: 6px 0px;
+    border-radius: 25px;
+    font-size: 8px; 
+    text-align: center; 
+} 
+.btn-light{
+    background: transparent;
+    border-color:transparent;
+}
+.w-150{
+    width:120px;
+}
+.table-wrapper{
+  border: 1px solid rgba(218, 218, 218, 0.2);
+  margin-bottom: 25px;
+}
+
+.page-title{
+  font-size: 24px;
+    color: #222;
+}
+.theme-btn-light{
+    background: #c9e7fe;
+    color: #0266ff;
+}
+.theme-btn{
+  background: #0266ff;
+  color: #fafafa;
+}
+
+.theme-btn-light:hover{
+  background: #0266ff;
+  color: #fafafa;
+}
+
+.button-c-round{
+    border-radius: 20px;
+}
+
+.c-logo{
+  width:50px;
+  height: 50px;
+  object-fit: cover;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+
+.modal-content {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+.modal-title {
+  color: #444;
+}
+
+.modal-footer {
+  border-top: 0px solid #fcfdff;
+}

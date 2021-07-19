@@ -1,0 +1,51 @@
+.rotate-315{
+    transform: rotate(315deg);
+   }
+   #chartdiv, #chartdiv2 {
+      width: 100%;
+      height: 300px;
+    }
+   .graph-title{
+     font-size: 19px;
+     color: #444;
+   }
+   .graph-filter-btn button{
+    border-color: #dcdcdc;
+    padding: 6px 15px !important;
+    *box-shadow: 0 0 2px #e4e4e4;
+    background:#fff !important;
+   }
+   .graph-filter-btn button:first-child{
+      margin-right: 1px !important;
+      border-top-left-radius: 2px;
+     border-bottom-left-radius: 2px;
+   }
+   .graph-filter-btn button:last-child{
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+   }
+   .graph-filter-btn button.active{
+       border-color: #0797cd !important;
+       background: #fff !important;
+       color:#0797cd !important;
+       box-shadow: 0 0 2px #94dafb;
+   }
+
+   .box-style2{
+     background:#fff;
+     border-radius:4px;
+     margin: 15px 0px;
+     padding: 5px 0;
+   }
+
+   g[aria-labelledby]{
+     display: none !important;
+     opacity: 0 !important;
+   }
+
+
+   @media(min-width:767px){
+      .mh-400{
+        min-height:400px;
+      }
+   }

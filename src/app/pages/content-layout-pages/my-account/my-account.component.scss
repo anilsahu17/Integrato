@@ -1,0 +1,14 @@
+.page-title{
+    font-size: 24px;
+    color: #222;
+}
+
+:host ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, :host ::ng-deep .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #0266ff;
+}
+
+.tab-label-content{
+    font-size: 16px;
+    color: #353535;
+    font-family: "Heebo medium";
+}

@@ -1,0 +1,103 @@
+
+ <header id="topbar" class="topbar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 pt-2 pb-2 px-0">
+                <ul class="top-bar left-bar">
+                  <li><span class="icon lnr lnr-menu sidebarToggle" style="font-size: 27px;"></span></li>
+                  <li>
+                    <span class="icon lnr lnr-magnifier search-icon" style="font-size: 18px;margin-top: 5px;padding-left:4px"></span>
+                    <div class="top-search-form">
+                        <input class="form-control">
+                    </div>
+                  </li>
+                </ul>
+
+                <ul class="top-bar right-bar">
+                  <li class="my-dropdown">
+                      <div class="dropdown-tigger" >
+                         <img src="assets/images/profile_user.jpg" class="img-responsive user-profile-top" >
+                      </div>
+                      <div class="dropdown-menu right">
+                        <a class="dropdown-item" href="javascript:;">Hi, {{currentUser.firstName}}</a>
+                        <a class="dropdown-item" href="javascript:;" [routerLink]="['/account']" >My Account</a>
+                        <a class="dropdown-item" href="javascript:;"  (click)="logout()">Logout</a>
+                      </div>
+                  </li>
+                  <li class="my-dropdown">
+                      <span class="icon lnr lnr-alarm dropdown-tigger"><span class="count">3</span></span>
+                          <div class="notification-dropdown">
+                              <div class="dropdown-menu notify-drop right">
+                                <div class="notify-drop-title">
+                                  <div class="row">
+                                    <div class="col">Notification </div>
+                                    <div class="col-auto"> (<b>3</b>) </div>
+                                  </div>
+                                </div>
+                                <!-- end notify title -->
+                                <!-- notify content -->
+                                <ul class="drop-content">
+                                  <li class="noti-item">
+                                      <div class="notify-img">
+                                        <img src="http://placehold.it/45x45" alt="">
+                                      </div>
+                                      <div class="details">
+                                        <p><b>Ahmet yorumlad </b>
+                                        Lorem ipsum sit dolor amet consilium.</p>
+                                        <p class="time">2 Hafta önce</p>
+                                      </div>
+                                  </li>
+                                  <li class="noti-item">
+                                      <div class="notify-img">
+                                        <img src="http://placehold.it/45x45" alt="">
+                                      </div>
+                                      <div class="details">
+                                        <p><b>Ahmet yorumlad </b>
+                                        Lorem ipsum sit dolor amet consilium.</p>
+                                        <p class="time">2 Hafta önce</p>
+                                      </div>
+                                  </li>
+                                  <li class="noti-item">
+                                      <div class="notify-img">
+                                        <img src="http://placehold.it/45x45" alt="">
+                                      </div>
+                                      <div class="details">
+                                        <p><b>Ahmet yorumlad </b>
+                                        Lorem ipsum sit dolor amet consilium.</p>
+                                        <p class="time">2 Hafta önce</p>
+                                      </div>
+                                  </li>
+                                  <li class="noti-item">
+                                      <div class="notify-img">
+                                        <img src="http://placehold.it/45x45" alt="">
+                                      </div>
+                                      <div class="details">
+                                        <p><b>Ahmet yorumlad </b>
+                                        Lorem ipsum sit dolor amet consilium.</p>
+                                        <p class="time">2 Hafta önce</p>
+                                      </div>
+                                  </li>
+                                  <li class="noti-item">
+                                      <div class="notify-img">
+                                        <img src="http://placehold.it/45x45" alt="">
+                                      </div>
+                                      <div class="details">
+                                        <p><b>Ahmet yorumlad </b>
+                                        Lorem ipsum sit dolor amet consilium.</p>
+                                        <p class="time">2 Hafta önce</p>
+                                      </div>
+                                  </li>
+                                  
+                                </ul>
+                                <div class="notify-drop-footer text-center">
+                                  <a href=""> Read All</a>
+                                </div>
+                              </div>   
+                         </div>   
+                  
+                  </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </header>
